@@ -1,5 +1,13 @@
+webgazer.setGazeListener(function(data, elapsedTime) {
+    var xprediction = data.x;
+    var yprediction = data.y;
+}).begin();
 
-webgazer.begin()
+
+webgazer.showPredictionPoints(true);
+console.log ('xprediction');
+console.log ('yprediction')
+webgazer.end ();
 
 /* All the stuff that deals with video */
 var video = document.querySelector("#videoElement");
@@ -18,5 +26,3 @@ function videoError(e) {
     // do something
 }
 
-=======
-webgazer.begin()
