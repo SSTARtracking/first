@@ -11,7 +11,8 @@ webgazer.end ();
 
 /* All the stuff that deals with video */
 var video = document.querySelector("#videoElement");
- 
+
+
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
  
 if (navigator.getUserMedia) {       
