@@ -1,28 +1,34 @@
+var xprediction;
+var yprediction;
 webgazer.setGazeListener(function(data, elapsedTime) {
-    var xprediction = data.x;
-    var yprediction = data.y;
+    if(data == null) {
+        return
+    }
+    xprediction = data.x;
+    yprediction = data.y;
+    console.log(elapsedTime);
 }).begin();
 
 
 webgazer.showPredictionPoints(true);
-console.log ('xprediction');
-console.log ('yprediction')
-webgazer.end ();
+
 
 /* All the stuff that deals with video */
-var video = document.querySelector("#videoElement");
+//var video = document.querySelector("#videoElement");
  
 navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
  
-if (navigator.getUserMedia) {       
-    navigator.getUserMedia({video: true}, handleVideo, videoError);
-}
+// if (navigator.getUserMedia) {       
+//     navigator.getUserMedia({video: true}, handleVideo, videoError);
+// }
  
-function handleVideo(stream) {
-    video.src = window.URL.createObjectURL(stream);
-}
+// function handleVideo(stream) {
+//     video.src = window.URL.createObjectURL(stream);
+// }
  
 function videoError(e) {
     // do something
 }
+console.log (xprediction);
+console.log (yprediction);
 
