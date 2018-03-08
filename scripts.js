@@ -114,6 +114,11 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     console.log(elapsedTime);
 }).begin();
 
+var prediction = webgazer.getCurrentPrediction();
+if (prediction) {
+    var x = prediction.x;
+    var y = prediction.y;
+}
 
 webgazer.showPredictionPoints(true);
 <<<<<<< HEAD
