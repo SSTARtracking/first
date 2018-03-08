@@ -1,4 +1,14 @@
-
+<html>
+  <head>
+    <title>SSTARtracking Game</title>
+    <link rel = "shortcut icon" href = "/favicon.png" type = "image/x-icon">
+    <script src = "/bower components/webcomponentsjs/webcomponent-lite.js"></script>
+    <link rel = "import" href = "/bower components/polymer/polymer.html">
+    <link rel = "import" href = "/bower components/paper-material/paper-material.html">
+    <link rel = "import" href = "/bower components/paper-button/paper-button.html">
+    <link rel = "import" href = "/bower components/paper-input/paper-input.html">
+    <link rel = "import" href = "/bower components/paper-styles/demo-pages.html">
+  </head>
 <script src="https://www.gstatic.com/firebasejs/4.10.1/firebase.js"></script>
 <script>
   // Initialize Firebase
@@ -14,8 +24,61 @@
 </script>
 
 <body>
-  <template
+  <template is = "dom-bind" id = "app">
   <paper-material elevation = "1" style = "padding: 2ren;">
     <h2> Input your email and password :) </h2>
+    <paper-input label = "Email" value = "{{email :: input}}" type= "text"></paper-input>
+    <paper-input label = "Password" value = "{{password :: input}}" type= "text"></paper-input>
+    <paper-button on-click = "signIn"> Sign In </paper-button>
+    <paper-button on-click = "register"> Register </paper-button>
+    <paper-button on-click = "signOut"> Sign out </paper-button>
+  </paper-material>
   </template>
+
+  <script>
+    (function (){
+      var app = document.querySelector ('#app');
+      app.signIn = function (){
+        var email = app.email;
+        var password = app.password;
+
+        if (!email || !password){
+          return console.log ('email and password required');
+        }
+
+        firebase.auth().signInWithEmailAndPassword (email, password)
+        .catch (function(error){
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          console.log ('signIn error', error);
+        });
+
+        };
+        app.register = function () {
+          var email = app.email;
+          var password = app.password;
+
+          if (!email || !password){
+            return console.log ('email and password required');
+          }
+
+          firebase.auth().createUserWithEmailAndPassword (email, password)
+          .catch(function(error){
+            console.log ('register error', error);
+            if (error.code === 'auth/email-already-in-use'){
+              var credential = firebase.auth.EmailAuthProvider.credential (email, password);
+              
+            }
+          });
+
+          app.signOut = function (){
+            firebase.auth().signOut ();
+
+          };
+        }
+        
+      });
+  </script>
+
 </body>
+</html>
