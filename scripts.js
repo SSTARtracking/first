@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // window.onload = function() {
 
 //     //start the webgazer tracker
@@ -101,10 +100,6 @@
 // }
 firebase.auth()
 
-=======
-var xprediction;
-var yprediction;
->>>>>>> 9b8bf674bbdbf690f889b49a61953996632008af
 webgazer.setGazeListener(function(data, elapsedTime) {
     if(data == null) {
         return
@@ -114,18 +109,10 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     console.log(elapsedTime);
 }).begin();
 
-var prediction = webgazer.getCurrentPrediction();
-if (prediction) {
-    var x = prediction.x;
-    var y = prediction.y;
-}
 
 webgazer.showPredictionPoints(true);
-<<<<<<< HEAD
 console.log ('xprediction');
 console.log ('yprediction');
-=======
->>>>>>> 9b8bf674bbdbf690f889b49a61953996632008af
 
 
 /* All the stuff that deals with video */
