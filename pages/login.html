@@ -46,12 +46,14 @@
     <form>
         <div>
           <br>
-          <!-- input spaces for typing in information -->
-            <!-- email input -->
-            <input id="email" type="text" placeholder="Email...">
+            <div>
+              <!-- input spaces for typing in information -->
+              <!-- email input -->
+              <input id="email" type="text" placeholder="Email...">
 
-            <!-- password input -->
-            <input id="password" type="password" placeholder="Password...">
+              <!-- password input -->
+              <input id="password" type="password" placeholder="Password...">
+            </div>
         </div>
         <!-- Buttons to do stuff -->
         <div>
@@ -138,7 +140,7 @@
           firebase.auth().signInWithEmailAndPassword (email, password)
               .then( function(user){
                 console.log("Sign in successful", user);
-                Materialize.toast("Sign in successful! User: " + user, 4000);
+                Materialize.toast("Sign in successful!", 4000);
 
                 auth = user;
               })
@@ -155,6 +157,7 @@
           e.preventDefault();
           e.stopPropagation();
           firebase.auth().signOut();
+          Materialize.toast("Signed Out", 4000);
         });
       })
         </script>
