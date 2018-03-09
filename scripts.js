@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-// window.onload = function() {
+ window.onload = function() {
 
 //     //start the webgazer tracker
 //     webgazer.setRegression('ridge') /* currently must set regression and tracker */
@@ -101,10 +100,6 @@
 // }
 firebase.auth()
 
-=======
-var xprediction;
-var yprediction;
->>>>>>> 9b8bf674bbdbf690f889b49a61953996632008af
 webgazer.setGazeListener(function(data, elapsedTime) {
     if(data == null) {
         return
@@ -121,11 +116,8 @@ if (prediction) {
 }
 
 webgazer.showPredictionPoints(true);
-<<<<<<< HEAD
 console.log ('xprediction');
 console.log ('yprediction');
-=======
->>>>>>> 9b8bf674bbdbf690f889b49a61953996632008af
 
 
 /* All the stuff that deals with video */
@@ -149,4 +141,4 @@ function videoError(e) {
 }
 console.log (xprediction);
 console.log (yprediction);
-
+ }
