@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  window.onload = function() {
+=======
+// window.onload = function() {
+>>>>>>> 8cc78c37d48d2ec0305defb366adca032b544288
 
 //     //start the webgazer tracker
 //     webgazer.setRegression('ridge') /* currently must set regression and tracker */
@@ -109,11 +113,6 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     console.log(elapsedTime);
 }).begin();
 
-var prediction = webgazer.getCurrentPrediction();
-if (prediction) {
-    var x = prediction.x;
-    var y = prediction.y;
-}
 
 webgazer.showPredictionPoints(true);
 console.log ('xprediction');
