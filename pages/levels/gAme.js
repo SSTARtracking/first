@@ -4,9 +4,10 @@ $(document).on('mousemove', function (e){
     $('#coords').css({left:e.pageX, top:e.pageY});
 });
 var gameIsRunning = false;
+var timer = duration, minutes, seconds;
 
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+
     setInterval(function () {
         minutes = parseInt(timer / 30, 10)
         seconds = parseInt(timer % 30, 10);
@@ -34,7 +35,7 @@ var accuracy = 0;
 
 while (gameIsRunning = true){
     
-    if (860>X>600 && 260<Y<400)
+    while (860>X>600 && 260<Y<400)
     {
         var sec = 0;
         function pad ( val ) { return val > 9 ? val : "0" + val; }
@@ -44,13 +45,12 @@ while (gameIsRunning = true){
         }, 1000);
         total.setSeconds(total + sec);
     }
-    else 
-    {
-        total = total;
-    }
+    
 }
 
 function calculateAccuracy()
 {
     accuracy = total / 30 * 100;
 }
+
+function calulatePoint ()
