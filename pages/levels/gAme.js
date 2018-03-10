@@ -4,7 +4,13 @@ $(document).on('mousemove', function (e){
     $('#coords').css({left:e.pageX, top:e.pageY});
 });
 var gameIsRunning = false;
+<<<<<<< HEAD
 var timer = duration, minutes, seconds;
+=======
+var timer;
+var minutes;
+var seconds;
+>>>>>>> 313674ec823df2e2c2e11f7541d768986c1afeae
 
 function startTimer(duration, display) {
 
@@ -17,11 +23,12 @@ function startTimer(duration, display) {
 
         display.textContent =  "00:" + seconds;
 
-        if (--timer < 0) {
+        if (seconds < 0) {
             gameIsRunning = true;
             timer = duration;
         }
     }, 1000);
+    gameIsRunning = false;
 }
 
 window.onload = function () {
@@ -33,7 +40,7 @@ window.onload = function () {
 var total = new Date();
 var accuracy = 0;
 
-while (gameIsRunning = true){
+while (seconds > 0){
     
     while (860>X>600 && 260<Y<400)
     {
@@ -44,8 +51,13 @@ while (gameIsRunning = true){
             document.getElementById("minutes").innerHTML=pad(parseInt(sec/60,10));
         }, 1000);
         total.setSeconds(total + sec);
+<<<<<<< HEAD
     }
     
+=======
+        consol.log(total);
+    }
+>>>>>>> 313674ec823df2e2c2e11f7541d768986c1afeae
 }
 
 function calculateAccuracy()
