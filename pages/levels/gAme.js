@@ -6,9 +6,11 @@ $(document).on('mousemove', function (e){
 });
 var gameIsRunning = false;
 
+
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
+        
         minutes = parseInt(timer / 30, 10)
         seconds = parseInt(timer % 30, 10);
 
@@ -30,6 +32,17 @@ window.onload = function () {
         display = document.querySelector('#time');
     startTimer(minutes, display);
 };
+
+if (860>$('#X').html()>600 && 260<$('#Y').html()Y<400)
+{
+    var sec = 0;
+    function pad ( val ) { return val > 9 ? val : "0" + val; }
+    setInterval( function(){
+        $("#seconds").html(pad(++sec%60));
+        $("#minutes").html(pad(parseInt(sec/60,10)));
+    }, 1000);
+
+}
 // var total = new Date();
 // var accuracy = 0;
 
