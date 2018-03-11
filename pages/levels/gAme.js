@@ -1,16 +1,18 @@
+<<<<<<< HEAD
 
 $(document).on('mousemove', function (e){
+=======
++$(document).on('mousemove', function (e){
+>>>>>>> f86a3c26a68df6de053269d52ac53d96b8dcee3d
     $('#X').html("<b>X:</b>" + " " + e.pageX);
     $('#Y').html("<b>Y:</b>" + " " + e.pageY);
     $('#coords').css({left:e.pageX, top:e.pageY});
 });
 var gameIsRunning = false;
 
-
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     setInterval(function () {
-        
         minutes = parseInt(timer / 30, 10)
         seconds = parseInt(timer % 30, 10);
 
