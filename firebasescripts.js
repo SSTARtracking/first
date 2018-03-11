@@ -41,20 +41,25 @@ document.querySelector('#register').addEventListener('click',function (e){
 
 document.querySelector('#sign-in').addEventListener('click', function(e) {
     Materialize.toast("1", 4000);
+  
     e.preventDefault();
     e.stopPropagation();
+   
     Materialize.toast("2", 4000);
+   
     var auth = firebase.auth();
     var currentUser = auth.currentUser;
+    
     Materialize.toast("3", 4000);
-    firebase.auth().signInWithEmailAndPassword (email, password)
-        .then( function(user){  Materialize.toast("4", 4000);
+    
+    firebase.auth().signInWithEmailAndPassword (email, password).then( function(user){    
+            Materialize.toast("4", 4000);
+            
             console.log("Sign in successful", user);
             Materialize.toast("Sign in successful!", 4000);
 
             auth = user;
-        })
-        .catch (function(error){  Materialize.toast("5", 4000);
+        }).catch (function(error){  Materialize.toast("5", 4000);
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log ('signIn error', error);
