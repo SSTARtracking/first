@@ -26,6 +26,7 @@ document.querySelector('#register').addEventListener('click',function (e){
         $('#register').addClass('disabled');
         $('#sign-in').addClass('disabled');
         $('#sign-out').removeClass('disabled').addClass();
+        $("#myForm")[0].reset();
     })
 
       //if it doesn't work
@@ -58,6 +59,7 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
             
             console.log("Sign in successful", user);
             Materialize.toast("Sign in successful!", 4000);
+            $("#myForm")[0].reset();
 
             auth = user;
             $('#register').addClass('disabled');
