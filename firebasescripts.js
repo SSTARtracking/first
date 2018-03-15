@@ -90,15 +90,16 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
 })
 
 function loadLevel1() {
-    hideLevels();
+    showLevel();
     $("#levelLoad").load("levels/level1.html");
 }
 
-function hideLevels() {
+function showLevel() {
     $("#myForm").hide();
     $("#levels").hide();
     $("#sign-out").hide();
     $("#back").show();
+    $("#levelLoad").show();
 }
 
 function back() {
