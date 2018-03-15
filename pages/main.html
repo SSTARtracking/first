@@ -65,7 +65,7 @@
   <!-- Makes the level buttons -->
 <div class="row">
   <!-- each div class is in the row and is s1 wide... color blue lighten-4 and linking to the html file with the level name -->
-      <div class="col s1"><a href="levels/level1.html" class="waves-effect waves-light btn pulse blue lighten-3">1</a></div>
+      <div class="col s1"><a id = "loadLevel1" href="#" onclick="loadLevel1()" class="waves-effect waves-light btn pulse blue lighten-3">1</a></div>
       <div class="col s1"><a href="levels/level2.html" class="waves-effect waves-light btn blue lighten-5">2</a></div>
       <div class="col s1"><a href="levels/level3.html" class="waves-effect waves-light btn blue lighten-5">3</a></div>
       <div class="col s1"><a href="levels/level4.html" class="waves-effect waves-light btn blue lighten-5">4</a></div>
@@ -80,6 +80,15 @@
 
     </div>
 </div>
+
+<div class="col s12" id = "levelLoad"></div>
+
+<!-- Back to Levels button -->
+<a id="back" onclick="back()" class="waves-effect waves-light blue lighten-3 btn" hidden>
+  <i class="material-icons right">keyboard_return  </i>
+  Return to Levels
+</a>
+<br>
 
 <!-- Sign out button -->
 <a class="waves-effect waves-light blue lighten-3 btn" id="sign-out" hidden>

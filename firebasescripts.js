@@ -2,6 +2,7 @@ window.onload = function() {
     $("#myForm").show();
     $("#levels").hide();
     $("#sign-out").hide();
+    $("#back").hide();
 }
 // Initialize Firebase
 var config = {
@@ -87,3 +88,23 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     $("#levels").hide();
     $("#sign-out").hide();
 })
+
+function loadLevel1() {
+    hideLevels();
+    $("#levelLoad").load("levels/level1.html");
+}
+
+function hideLevels() {
+    $("#myForm").hide();
+    $("#levels").hide();
+    $("#sign-out").hide();
+    $("#back").show();
+}
+
+function back() {
+    $("#myForm").hide();
+    $("#levels").show();
+    $("#sign-out").show();
+    $("#back").hide();
+    $("#levelLoad").hide();
+}
