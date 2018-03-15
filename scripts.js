@@ -99,7 +99,8 @@
 // //     PopUpInstruction();
 // // }
 // firebase.auth()
-
+var xprediction;
+var yprediction;
 webgazer.setGazeListener(function(data, elapsedTime) {
     if(data == null) {
         return
@@ -107,6 +108,8 @@ webgazer.setGazeListener(function(data, elapsedTime) {
     xprediction = data.x;
     yprediction = data.y;
     console.log(elapsedTime);
+    console.log (xprediction);
+    console.log (yprediction);
 }).begin();
 
 
@@ -134,6 +137,4 @@ var video = document.querySelector("#videoElement");
 // function videoError(e) {
 //     // do something
 // }
-console.log (xprediction);
-console.log (yprediction);
  }
