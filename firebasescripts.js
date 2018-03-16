@@ -1,3 +1,9 @@
+window.onload = function() {
+    $("#myForm").show();
+    $("#levels").hide();
+    $("#sign-out").hide();
+    $("#back").hide();
+}
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBAJpkMR0_UkefBf6q89yLg72AgKZOcwzk",
@@ -22,8 +28,10 @@ document.querySelector('#register').addEventListener('click',function (e){
         //log to the console that a user was created
         console.log("Successfully created user account: ", user.uid);
         //popup (toast) that the user account was created
-        Materialize.toast("Successfully created user account: " + user.uid, 4000);
-      })
+        Materialize.toast("Successfully created user account!", 4000);
+
+        $("#myForm")[0].reset();
+    })
 
       //if it doesn't work
       .catch(function(error){
@@ -35,26 +43,34 @@ document.querySelector('#register').addEventListener('click',function (e){
         if (error.code === 'auth/email-already-in-use'){
           var credential = firebase.auth.EmailAuthProvider.credential (email, password);
         }
-        
       });
 })
 
 document.querySelector('#sign-in').addEventListener('click', function(e) {
-    Materialize.toast("1", 4000);
+  
     e.preventDefault();
     e.stopPropagation();
-    Materialize.toast("2", 4000);
+    var email = document.querySelector('#email').value;
+    var password = document.querySelector('#password').value
+    var credential = firebase.auth.EmailAuthProvider.credential(email, password);
+    
+   
     var auth = firebase.auth();
     var currentUser = auth.currentUser;
-    Materialize.toast("3", 4000);
-    firebase.auth().signInWithEmailAndPassword (email, password)
-        .then( function(user){  Materialize.toast("4", 4000);
+    
+    
+    firebase.auth().signInWithEmailAndPassword (email, password).then( function(user){    
+            
             console.log("Sign in successful", user);
             Materialize.toast("Sign in successful!", 4000);
+            $("#myForm")[0].reset();
+            $("#myForm").hide();
+            $("#levels").show();
+            $("#sign-out").show();
 
             auth = user;
-        })
-        .catch (function(error){  Materialize.toast("5", 4000);
+
+        }).catch (function(error){
             var errorCode = error.code;
             var errorMessage = error.message;
             console.log ('signIn error', error);
@@ -68,4 +84,28 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     e.stopPropagation();
     firebase.auth().signOut();
     Materialize.toast("Signed Out", 4000);
+    $("#myForm").show();
+    $("#levels").hide();
+    $("#sign-out").hide();
 })
+
+function loadLevel1() {
+    showLevel();
+    $("#levelLoad").load("levels/level1.html");
+}
+
+function showLevel() {
+    $("#myForm").hide();
+    $("#levels").hide();
+    $("#sign-out").hide();
+    $("#back").show();
+    $("#levelLoad").show();
+}
+
+function back() {
+    $("#myForm").hide();
+    $("#levels").show();
+    $("#sign-out").show();
+    $("#back").hide();
+    $("#levelLoad").hide();
+}
