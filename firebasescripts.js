@@ -1,3 +1,9 @@
+window.onload = function() {
+    $("#myForm").show();
+    $("#levels").hide();
+    $("#sign-out").hide();
+    $("#back").hide();
+}
 // Initialize Firebase
 var config = {
     apiKey: "AIzaSyBAJpkMR0_UkefBf6q89yLg72AgKZOcwzk",
@@ -23,9 +29,7 @@ document.querySelector('#register').addEventListener('click',function (e){
         console.log("Successfully created user account: ", user.uid);
         //popup (toast) that the user account was created
         Materialize.toast("Successfully created user account!", 4000);
-        $('#register').addClass('disabled');
-        $('#sign-in').addClass('disabled');
-        $('#sign-out').removeClass('disabled').addClass();
+
         $("#myForm")[0].reset();
     })
 
@@ -60,11 +64,12 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
             console.log("Sign in successful", user);
             Materialize.toast("Sign in successful!", 4000);
             $("#myForm")[0].reset();
+            $("#myForm").hide();
+            $("#levels").show();
+            $("#sign-out").show();
 
             auth = user;
-            $('#register').addClass('disabled');
-            $('#sign-in').addClass('disabled');
-            $('#sign-out').removeClass('disabled').addClass();
+
         }).catch (function(error){
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -79,7 +84,28 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     e.stopPropagation();
     firebase.auth().signOut();
     Materialize.toast("Signed Out", 4000);
-    $('#register').removeClass('disabled');
-    $('#sign-in').removeClass('disabled');
-    $('#sign-out').addClass('disabled');
+    $("#myForm").show();
+    $("#levels").hide();
+    $("#sign-out").hide();
 })
+
+function loadLevel1() {
+    showLevel();
+    $("#levelLoad").load("levels/level1.html");
+}
+
+function showLevel() {
+    $("#myForm").hide();
+    $("#levels").hide();
+    $("#sign-out").hide();
+    $("#back").show();
+    $("#levelLoad").show();
+}
+
+function back() {
+    $("#myForm").hide();
+    $("#levels").show();
+    $("#sign-out").show();
+    $("#back").hide();
+    $("#levelLoad").hide();
+}
