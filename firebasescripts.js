@@ -10,19 +10,6 @@ window.onload = function() {
     $("#levels").hide();
     $("#sign-out").hide();
     $("#back").hide();
-
-    db.collection("users").doc("LA").set({
-        name: "Los Angeles",
-        state: "CA",
-        country: "USA"
-    })
-    .then(function() {
-        console.log("Document successfully written!");
-    })
-    .catch(function(error) {
-        console.error("Error writing document: ", error);
-    });
-
 }
 // Initialize Firebase
 var config = {
@@ -77,7 +64,6 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
    
     var auth = firebase.auth();
     currentUser = auth.currentUser;
-    db = firebase.firestore();
     
     firebase.auth().signInWithEmailAndPassword (email, password).then( function(user){    
             
