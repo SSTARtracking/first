@@ -1,8 +1,27 @@
+<<<<<<< HEAD:levels/gAme.js
 (document).on('mousemove', function (e)
 {
     ('#X').html("<b>X:</b>" + " " + e.pageX);
     ('#Y').html("<b>Y:</b>" + " " + e.pageY);
     ('#coords').css({left:e.pageX, top:e.pageY});
+=======
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+$(document).on('mousemove', function (e){
+    $('#X').html("<b>X:</b>" + " " + e.pageX);
+    $('#Y').html("<b>Y:</b>" + " " + e.pageY);
+    $('#coords').css({left:e.pageX, top:e.pageY});
+=======
+>>>>>>> c6da126bb55932a8ece9c8775b38044f0689787c
+(document).on('mousemove', function (e)
+{
+    ('#X').html("<b>X:</b>" + " " + e.pageX);
+    ('#Y').html("<b>Y:</b>" + " " + e.pageY);
+    ('#coords').css({left:e.pageX, top:e.pageY});
+>>>>>>> 10b0084de68e029bc209f500d23ad997aceadaa5
+>>>>>>> parent of 7aeb172... yyayayayy:pages/levels/gAme.js
 });
 var gameIsRunning = false;
 
