@@ -1,3 +1,10 @@
+// Initialize Cloud Firestore through Firebase
+var db;
+
+var progress = 8;
+var currentUser;
+
+
 window.onload = function() {
     $("#myForm").show();
     $("#levels").hide();
@@ -56,17 +63,14 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
     
    
     var auth = firebase.auth();
-    var currentUser = auth.currentUser;
-    
+    currentUser = auth.currentUser;
     
     firebase.auth().signInWithEmailAndPassword (email, password).then( function(user){    
             
             console.log("Sign in successful", user);
             Materialize.toast("Sign in successful!", 4000);
-            $("#myForm")[0].reset();
-            $("#myForm").hide();
-            $("#levels").show();
-            $("#sign-out").show();
+
+            showLevelList();
 
             auth = user;
 
@@ -89,9 +93,18 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     $("#sign-out").hide();
 })
 
-function loadLevel1() {
+function showLevelList(){
+    synchronizeProgress();
+    $("#levels").show();
+    $("#myForm").hide();
+    $("#back").hide();
+    $("#sign-out").show();
+    $("#levelLoad").hide();
+}
+
+function loadLevel(i) {
     showLevel();
-    $("#levelLoad").load("levels/level1.html");
+    $("#levelLoad").load("levels/level"+i+".html");
 }
 
 function showLevel() {
@@ -102,10 +115,24 @@ function showLevel() {
     $("#levelLoad").show();
 }
 
-function back() {
-    $("#myForm").hide();
-    $("#levels").show();
-    $("#sign-out").show();
-    $("#back").hide();
-    $("#levelLoad").hide();
+//NEITHER WORK FIX this
+// $('.load-level').click(
+//     function(target) {
+//         console.log(target);
+//         console.log(target.getAttribute("levelnumber"));
+//         console.log(target.attr("levelnumber"));
+// }
+// )
+
+// $('.load-level').click(function(target) {
+//     //need to get the data-name here
+//     var name = $(target).data("levelnumber");
+//     console.log(name);
+//   })
+
+function synchronizeProgress() {
+    for (i=0; i<progress;i++) {
+        $($(".load-level")[i]).removeClass("disabled");
+    }
+    $($(".load-level")[i-1]).addClass("pulse");
 }

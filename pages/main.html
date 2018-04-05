@@ -9,7 +9,7 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/><script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
       <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-
+      <link type="text/css" rel="stylesheet" href="./style.css"/>
     </head>
 
     <body>      
@@ -63,38 +63,45 @@
     <!-- Makes the section for level buttons -->
     <div class="section" id = "levels" hidden>
       <!-- Makes the level buttons -->
-    <!-- <div class="row"> -->
+    <div class="row">
       <!-- each div class is in the row and is s1 wide... color blue lighten-4 and linking to the html file with the level name -->
-    <a id = "loadLevel1" onclick="loadLevel1()" class="waves-effect waves-light btn pulse blue lighten-3">1</a>
-    <a class="waves-effect waves-light btn blue lighten-5">2</a>
-    <a class="waves-effect waves-light btn blue lighten-5">3</a>
-    <a class="waves-effect waves-light btn blue lighten-5">4</a>
-    <a class="waves-effect waves-light btn blue lighten-5">5</a>
-    <a class="waves-effect waves-light btn blue lighten-5">6</a>
-    <a class="waves-effect waves-light btn blue lighten-5">7</a>
-    <a class="waves-effect waves-light btn blue lighten-5">8</a>
-    <a class="waves-effect waves-light btn blue lighten-5">9</a>
-    <a class="waves-effect waves-light btn blue lighten-5">10</a>
-    <a class="waves-effect waves-light btn blue lighten-5">11</a>
-    <a class="waves-effect waves-light btn blue lighten-5">12</a>
+      
+        <div class="col s1"><a onclick="loadLevel(1)" class="load-level waves-effect waves-light btn blue lighten-3">1</a></div>
+        <div class="col s1"><a onclick="loadLevel(2)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">2</a></div>
+        <div class="col s1"><a onclick="loadLevel(3)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">3</a></div>
+        <div class="col s1"><a onclick="loadLevel(4)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">4</a></div>
+        <div class="col s1"><a onclick="loadLevel(5)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">5</a></div>
+        <div class="col s1"><a onclick="loadLevel(6)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">6</a></div>
+        <div class="col s1"><a onclick="loadLevel(7)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">7</a></div>
+        <div class="col s1"><a onclick="loadLevel(8)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">8</a></div>
+        <div class="col s1"><a onclick="loadLevel(9)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">9</a></div>
+        <div class="col s1"><a onclick="loadLevel(10)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">10</a></div>
+        <div class="col s1"><a onclick="loadLevel(11)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">11</a></div>
+        <div class="col s1"><a onclick="loadLevel(12)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">12</a></div>
 
-        <!-- </div> -->
+        </div>
     </div>
 
     <div class="col s12" id = "levelLoad"></div>
 
-    <!-- Back to Levels button -->
-    <a id="back" onclick="back()" class="waves-effect waves-light blue lighten-3 btn" hidden>
-      <i class="material-icons right">keyboard_return  </i>
-      Return to Levels
-    </a>
+
     <br>
 
     <!-- Sign out button -->
-    <a class="waves-effect waves-light blue lighten-3 btn" id="sign-out" hidden>
-      <i class="material-icons right">exit_to_app</i>
-      Sign Out
-    </a>
+    <div class="row">
+      <div class="col s2">
+            <!-- Back to Levels button -->
+        <a id="back" onclick="showLevelList()" class="waves-effect waves-light blue lighten-3 btn" hidden>
+          <i class="material-icons right">keyboard_return  </i>
+          Return to Levels
+        </a>
+
+        <a class="waves-effect waves-light blue lighten-3 btn" id="sign-out" hidden>
+          <i class="material-icons right">exit_to_app</i>
+          Sign Out
+        </a>
+      </div>
+    </div>
 
     <!--Include firebase.js  -->
     <script src="../firebaseui/dist/firebaseui.js"></script>
