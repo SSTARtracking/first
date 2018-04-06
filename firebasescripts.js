@@ -114,7 +114,7 @@ function showLevel() {
     $("#sign-out").hide();
     $("#back").show();
     $("#levelLoad").show();
-    $("#plotting_canvas").show();
+    $("#plotting_canvas").removeClass("hidden");
 }
 
 function synchronizeProgress() {
