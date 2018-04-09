@@ -105,7 +105,7 @@ function showLevelList(){
 
 function loadLevel(i) {
     showLevel();
-    $("#levelLoad").load("levels/level"+i+".html");
+    $("#levelLoad").load("level"+i+".html");
 }
 
 function showLevel() {
