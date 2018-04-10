@@ -101,6 +101,7 @@ function showLevelList(){
     $("#back").hide();
     $("#sign-out").show();
     $("#levelLoad").hide();
+    $("#navbar").show();
 }
 
 function loadLevel(i) {
@@ -114,6 +115,7 @@ function showLevel() {
     $("#sign-out").hide();
     $("#back").show();
     $("#levelLoad").show();
+    $("#navbar").hide();
 }
 
 function synchronizeProgress() {
