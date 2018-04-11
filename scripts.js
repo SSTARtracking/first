@@ -4,8 +4,8 @@
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
          .setGazeListener(function(data, clock) {
-       console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-             console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
+    //    console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
+    //          console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
           })
           .begin()
         .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
@@ -19,7 +19,7 @@
       var setup = function() {
           //Set up video variable to store the camera feedback
           var video = document.getElementById('webgazerVideoFeed');
-
+    
          //Position the camera feedback to the top left .
          video.style.display = 'block';
         video.style.position = 'fixed';
@@ -33,10 +33,11 @@
           video.style.background = '#222222';
         webgazer.params.imgWidth = width;
           webgazer.params.imgHeight = height;
-
+          $("#webgazerVideoFeed").hide();
           //Set up the main canvas. The main canvas is used to calibrate the webgazer.
               var overlay = document.createElement('canvas');
              overlay.id = 'overlay';
+
 
           //Setup the size of canvas
           overlay.style.position = 'fixed';
@@ -56,7 +57,8 @@
 
          document.body.appendChild(overlay);
          document.body.appendChild(faceOverlay);
-
+         $("#overlay").hide();
+         
         var canvas = document.getElementById("plotting_canvas");
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -70,6 +72,7 @@
                  cl.draw(overlay);
             }
        }
+       $("#plotting_canvas").hide();
         drawLoop();
    };
 
@@ -88,6 +91,8 @@
       window.localStorage.clear(); //Comment out if you want to save data across different sessions
   }
 
+  
+
   /**
    * Restart the calibration process by clearing the local storage and reseting the calibration point
    */
@@ -96,45 +101,3 @@
       ClearCalibration();
       PopUpInstruction();
  }
-// firebase.auth()
-
-/** 
-var xprediction;
-var yprediction;
-webgazer.setGazeListener(function(data, elapsedTime) {
-    if(data == null) {
-        return
-    }
-    xprediction = data.x;
-    yprediction = data.y;
-    console.log(elapsedTime);
-    console.log (xprediction);
-    console.log (yprediction);
-}).begin();
-
-
-webgazer.showPredictionPoints(true);
-// console.log ('xprediction');
-// console.log ('yprediction');
-
-
-/* All the stuff that deals with video */
-//var video = document.querySelector("#videoElement");
- 
-//var video = document.querySelector("#videoElement");
-
-
-//navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia || navigator.msGetUserMedia || navigator.oGetUserMedia;
- 
-// if (navigator.getUserMedia) {       
-//     navigator.getUserMedia({video: true}, handleVideo, videoError);
-// }
- 
-// function handleVideo(stream) {
-//     video.src = window.URL.createObjectURL(stream);
-// }
- 
-// function videoError(e) {
-//     // do something
-// }
-

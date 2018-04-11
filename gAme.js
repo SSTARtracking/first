@@ -1,5 +1,5 @@
 
-(document).on('mousemove', function (e)
+$(document).on('mousemove', function (e)
 {
     ('#X').html("<b>X:</b>" + " " + e.pageX);
     ('#Y').html("<b>Y:</b>" + " " + e.pageY);

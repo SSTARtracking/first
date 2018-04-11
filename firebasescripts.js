@@ -92,6 +92,7 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     $("#myForm").show();
     $("#levels").hide();
     $("#sign-out").hide();
+    $("#plotting_canvas").addClass("hidden");
 })
 
 function showLevelList(){
@@ -114,22 +115,8 @@ function showLevel() {
     $("#sign-out").hide();
     $("#back").show();
     $("#levelLoad").show();
+    $("#plotting_canvas").removeClass("hidden");
 }
-
-//NEITHER WORK FIX this
-// $('.load-level').click(
-//     function(target) {
-//         console.log(target);
-//         console.log(target.getAttribute("levelnumber"));
-//         console.log(target.attr("levelnumber"));
-// }
-// )
-
-// $('.load-level').click(function(target) {
-//     //need to get the data-name here
-//     var name = $(target).data("levelnumber");
-//     console.log(name);
-//   })
 
 function synchronizeProgress() {
     for (i=0; i<progress;i++) {
