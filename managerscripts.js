@@ -1,8 +1,8 @@
 var progress = 8;
-
+var levelCurrentlyLoaded;
 function showLevelList(){
     synchronizeProgress();
-    loadLevel(0);
+    $("#levelLoad").unload("level"+levelCurrentlyLoaded+".html");
     $("#levelLoad").hide();
     $("#levels").show();
     $("#myForm").hide();
@@ -12,6 +12,7 @@ function showLevelList(){
 }
 
 function loadLevel(i) {
+    levelCurrentlyLoaded = i;
     showLevel();
     $("#levelLoad").load("level"+i+".html");
 }
