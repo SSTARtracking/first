@@ -2,11 +2,12 @@ var progress = 8;
 
 function showLevelList(){
     synchronizeProgress();
+    loadLevel(0);
+    $("#levelLoad").hide();
     $("#levels").show();
     $("#myForm").hide();
     $("#back").hide();
     $("#sign-out").show();
-    $("#levelLoad").hide();
     $("#navbar").show();
 }
 

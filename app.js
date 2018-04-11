@@ -15,14 +15,23 @@ document.onmousemove = function(e){
 }
 
 function inZone(mouseX, mouseY) {
-    var xtemp = prediction.x;
-    var ytemp = prediction.y;
-    if (mouseX<zoneDims[1] && mouseX>zoneDims[0] && mouseY>zoneDims[2] && mouseY <zoneDims[3]) {
+    var prediction = webgazer.getCurrentPrediction();
+    var xtemp;
+    var ytemp;
+    if (prediction) {
+        xtemp = prediction.x;
+        ytemp = prediction.y;
+        console.log("WOAH");
+    }
+    
+    if (mouseX<zoneDims[1] && mouseX>zoneDims[0] && mouseY>zoneDims[2] && mouseY<zoneDims[3]) {
         return true;
-    }/*
-    else if (xtemp<zoneDims[1] && xtemp>zoneDims[0] && ytemp>zoneDims[2] && ytemp <zoneDims[3]) {
+    }
+    else if (xtemp<zoneDims[1] && xtemp>zoneDims[0] && ytemp>zoneDims[2] && ytemp<zoneDims[3]) {
+        console.log("WOOOOOOOOO");
+        alert("yeah it actually worked");
         return true;
-    }*/
+    }
     else {
         return false;
     }
