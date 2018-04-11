@@ -1,6 +1,6 @@
 var cursorX;
 var cursorY;
-var zoneDims = [20, 120, 40, 90];//corners (x1, x2, y1, y2)
+var zoneDims = [250, 350, 180, 250];//corners (x1, x2, y1, y2)
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
 document.getElementById("myCanvas").style.cursor = "crosshair";
@@ -15,9 +15,14 @@ document.onmousemove = function(e){
 }
 
 function inZone(mouseX, mouseY) {
-    if (mouseX<120 && mouseX>20 && mouseY>40 && mouseY < 90) {
+    var xtemp = prediction.x;
+    var ytemp = prediction.y;
+    if (mouseX<zoneDims[1] && mouseX>zoneDims[0] && mouseY>zoneDims[2] && mouseY <zoneDims[3]) {
         return true;
-    }
+    }/*
+    else if (xtemp<zoneDims[1] && xtemp>zoneDims[0] && ytemp>zoneDims[2] && ytemp <zoneDims[3]) {
+        return true;
+    }*/
     else {
         return false;
     }
@@ -30,5 +35,5 @@ function drawZone (i) {
     else {
         ctx.fillStyle="rgba(255,0,0,0.5)";
     }
-    ctx.fillRect(zoneDims[0],20,zoneDims[1]-zoneDims[0],zoneDims[3]-zoneDims[2]);    
+    ctx.fillRect(zoneDims[0],zoneDims[2]-20,zoneDims[1]-zoneDims[0],zoneDims[3]-zoneDims[2]);    
 }
