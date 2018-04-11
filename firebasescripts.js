@@ -74,6 +74,7 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
 
             auth = user;
 
+            
         }).catch (function(error){
             var errorCode = error.code;
             var errorMessage = error.message;
@@ -136,3 +137,33 @@ function synchronizeProgress() {
     }
     $($(".load-level")[i-1]).addClass("pulse");
 }
+
+var ref = firebase.database().ref();                 
+          ref.on("value", function(snapshot){
+    output.innerHTML = JSON.stringify(snapshot.val(), null, 2);
+});
+
+FirebaseDatabase.getInstance().setPeristenceEnable(true);
+scoreDatabase = FirebaseDatabase.getInstance ();
+scoreDatabaseReference = scoreDatabase.getReference ("score");
+addEventListener(scoreDatabaseReference);
+
+  // Set the configuration for your app
+  // TODO: Replace with your project's config object
+  var config = {
+    apiKey: "AIzaSyBAJpkMR0_UkefBf6q89yLg72AgKZOcwzk",
+    authDomain: "sstartracking-63a75.firebaseapp.com",
+    databaseURL: "https://sstartracking-63a75.firebaseio.com",
+    storageBucket: "sstartracking-63a75.appspot.com",
+  };
+  firebase.initializeApp(config);
+
+  // Get a reference to the database service
+  var database = firebase.database();
+  function writeUserData(userId, name, email, imageUrl) {
+    firebase.database().ref('users/' + userId).set({
+      username: name,
+      email: email,
+      profile_picture : imageUrl
+    });
+  }
