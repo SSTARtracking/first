@@ -1,14 +1,26 @@
+ var coordCounter = 0; 
  window.onload = function() {
-
     //start the webgazer tracker
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
          .setGazeListener(function(data, clock) {
-       console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-       console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
-          })
-          .begin()
-        .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
+        console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
+        console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
+        var prediction = webgazer.getCurrentPrediction();
+        if (prediction) {
+            var x = prediction.x;
+            var y = prediction.y;
+            }
+            if((x<350 && x> 250) && (y< 250 && y >150)) {
+                coordCounter++;
+                console.log(coordCounter);
+            }
+    })
+         .begin()
+         .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
+   
+          
+        
 
      var width = 320;
      var height = 240;
@@ -91,7 +103,6 @@
       window.localStorage.clear(); //Comment out if you want to save data across different sessions
   }
 
-  
 
   /**
    * Restart the calibration process by clearing the local storage and reseting the calibration point
