@@ -1,4 +1,4 @@
-var progress = 8;
+var progress = 1;
 var levelCurrentlyLoaded;
 function showLevelList(){
     synchronizeProgress();
