@@ -8,7 +8,6 @@ function showLevelList(){
     $("#myForm").hide();
     $("#back").hide();
     $("#sign-out").show();
-    $("#navbar").show();
 }
 
 function loadLevel(i) {
@@ -23,7 +22,6 @@ function showLevel() {
     $("#sign-out").hide();
     $("#back").show();
     $("#levelLoad").show();
-    $("#navbar").hide();
 }
 
 function synchronizeProgress() {
