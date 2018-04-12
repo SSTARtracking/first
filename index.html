@@ -4,12 +4,12 @@
       <!-- Import Google Icon Font -->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
-      <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/><script src="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.js"></script>
       <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.5.1/firebaseui.css" />
-      <link type="text/css" rel="stylesheet" href="./style.css"/>
+      <link type="text/css" rel="stylesheet" href="style.css"/>
 
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,24 +20,24 @@
     <body>     
 
       <!-- WebGazer.js library -->
-      <script src="./webgazer.js" type="text/javascript" ></script>
+      <script src="webgazer.js" type="text/javascript" ></script>
      
 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
-      <script type="text/javascript" src="../js/materialize.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
     
       <div w3-include-html="index2.html"></div>
 
     <!-- Sets up the main NavBar with the buttons and stuff -->
-    <nav>
+    <nav id = "navbar">
             <div class="nav-wrapper deep-purple lighten-2">
               <a href="#!" class="brand-logo center">SSTARtracking</a>
               <ul class="left hide-on-med-and-down">
                 <!-- all the buttons you can click (each li) and what they link to (each href) -->
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li class="active"><a href="main.html">Play!</a></li> 
+                <li class="active"><a href="index.html">Play!</a></li> 
     
               </ul>
             </div>
@@ -63,7 +63,7 @@
               <a class="waves-effect waves-teal blue lighten-3 btn" id="register"><i class="material-icons right">person_add</i>Register</a>
 
               <!-- Sign in button -->
-              <a class="waves-effect waves-light blue lighten-3 btn" id="sign-in"><i class="material-icons right">fingerprint</i>Sign In</a>
+              <a class="waves-effect waves-light teal lighten-3 btn" id="sign-in"><i class="material-icons right">fingerprint</i>Sign In</a>
               
             </div>
         </form>
@@ -122,14 +122,16 @@
     </div>
 
     <!--Include firebase.js  -->
-    <script src="../firebaseui/dist/firebaseui.js"></script>
-    <link type="text/css" rel="stylesheet" href="../firebaseui/dist/firebaseui.css" />
+    <script src="firebaseui/dist/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="firebaseui/dist/firebaseui.css" />
         
           
     <!--Configure firebase-->
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
-    <!-- put in all the JS from firebasescripts.js -->
-    <script src="../firebasescripts.js"></script>
+    <!-- put in all the JS from firebasescripts.js, managerscripts.js, scripts -->
+    <script src="firebasescripts.js"></script>
+    <script src='scripts.js' type="text/javascript" ></script>
+    <script src="managerscripts.js"></script>
 
     <canvas hidden id="plotting_canvas" width="1295" height="606" style="cursor: crosshair; position: fixed;"></canvas>
     
@@ -137,7 +139,7 @@
       <!--Import jQuery before materialize.js-->
 
       
- <script src="./precision_store_points.js"></script>
+ <script src="precision_store_points.js"></script>
 
  <!-- Adds the container for the video feed and tells it to autoplay -->
 <div id="container">

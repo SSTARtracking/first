@@ -1,7 +1,6 @@
 // Initialize Cloud Firestore through Firebase
 var db;
 
-var progress = 8;
 var currentUser;
 
 
