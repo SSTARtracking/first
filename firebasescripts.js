@@ -153,3 +153,4 @@ addEventListener(scoreDatabaseReference);
       profile_picture : imageUrl
     });
   }
+
