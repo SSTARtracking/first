@@ -1,3 +1,7 @@
+window.onload = function() {
+    $("#reward").hide();
+}
+
 var progress = 1;
 var levelCurrentlyLoaded;
 function showLevelList(){
@@ -29,4 +33,16 @@ function synchronizeProgress() {
         $($(".load-level")[i]).removeClass("disabled");
     }
     $($(".load-level")[i-1]).addClass("pulse");
+}
+
+var vid = document.getElementById("myVideo");
+vid.onended = function() {
+    alert("The video has ended");
+    console.log("ended");
+    loadReward();
+};
+
+function loadReward() {
+    $("#myVideo").hide();
+    $("#reward").show();
 }

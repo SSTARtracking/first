@@ -112,10 +112,3 @@
       ClearCalibration();
       PopUpInstruction();
  }
-
- $("#vid").onended = function() {
-     alert("The video ended");
-     console.log("ended");
- };
-
-// $("#vid").addEventListener("ended", alert("the video ended"));
