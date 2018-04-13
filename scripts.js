@@ -11,7 +11,7 @@
             var x = prediction.x;
             var y = prediction.y;
             }
-            if((x<350 && x> 250) && (y< 250 && y >150)) {
+            if((x<1100 && x> 460) && (y< 530 && y >300)) {
                 coordCounter++;
                 console.log(coordCounter);
             }
