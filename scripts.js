@@ -1,11 +1,26 @@
  var coordCounter = 0; 
+
+ Date.prototype.yyyymmdd = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+  
+    return [this.getFullYear(),
+            (mm>9 ? '' : '0') + mm,
+            (dd>9 ? '' : '0') + dd
+           ].join('');
+  };
+  
+  var date = new Date();
+
+
+
  window.onload = function() {
     //start the webgazer tracker
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
          .setGazeListener(function(data, clock) {
-        console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-        console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
+        // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
+        // console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
         var prediction = webgazer.getCurrentPrediction();
         if (prediction) {
             var x = prediction.x;
@@ -19,8 +34,9 @@
          .begin()
          .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
    
-          
-        
+    //    var email1 = email.replace("@", "_");
+    //    var email2 = email1.replace(".", "_");
+    //    writeUserData(email2,date.yyyymmdd(), coordCounter); 
 
      var width = 320;
      var height = 240;
@@ -103,6 +119,9 @@
       window.localStorage.clear(); //Comment out if you want to save data across different sessions
   }
 
+  var email1 = email.replace("@", "_");
+       var email2 = email1.replace(".", "_");
+       writeUserData(email2,date.yyyymmdd(), coordCounter); 
 
   /**
    * Restart the calibration process by clearing the local storage and reseting the calibration point

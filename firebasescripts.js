@@ -2,7 +2,7 @@
 var db;
 
 var currentUser;
-
+var email;
 
 window.onload = function() {
     $("#myForm").show();
@@ -24,7 +24,7 @@ firebase.initializeApp(config);
 document.querySelector('#register').addEventListener('click',function (e){
     e.preventDefault();
     e.stopPropagation();
-    var email = document.querySelector('#email').value;
+    email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value
     var credential = firebase.auth.EmailAuthProvider.credential(email, password);
     firebase.auth().createUserWithEmailAndPassword (email, password)
@@ -56,7 +56,7 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
   
     e.preventDefault();
     e.stopPropagation();
-    var email = document.querySelector('#email').value;
+    email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value
     var credential = firebase.auth.EmailAuthProvider.credential(email, password);
     
