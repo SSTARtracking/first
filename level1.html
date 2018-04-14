@@ -8,17 +8,36 @@
       <title>Level 1</title>
   </head>
   <body>
-    <script type="text/javascript" src="jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="jquery.min.js"></script> -->
     <div class="container">
-        <video id="vid" width="1000" height="700" autoplay>
+        <!-- <video id="vid" width="1000" height="700" autoplay>
             <source src="sstartracking visual.mp4" type="video/mp4">
                 Your browser does not support the video tag.
-            </video>
-        </div>
-            
+            </video> -->
+
+    
+    <video id="myVideo" width="1000" height="700" autoplay>
+      <source src="sstartracking visual.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div id="videoEnd" style="display:none">Great Job! Thanks for playing :)            <iframe src="https://giphy.com/embed/l49K1AIQuatbvL4LS" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/love-work-awesome-l49K1AIQuatbvL4LS">via GIPHY</a></p>
+    </div>
+    <script>
+         document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+        function myHandler(e) {
+            if(!e) { e = window.event; }
+           
+            document.getElementById('myVideo').style.display="none";
+            document.getElementById('videoEnd').style.display="block";
+           
+
+        }
+       
+    </script>
     
     </div>
-   
+    
   </body>
   <script type="text/javascript" src= "app.js"></script>
 </html>
