@@ -24,13 +24,13 @@
     <div id="videoEnd" style="display:none">Great Job! Thanks for playing :)            <iframe src="https://giphy.com/embed/l49K1AIQuatbvL4LS" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/love-work-awesome-l49K1AIQuatbvL4LS">via GIPHY</a></p>
     </div>
     <script>
+
          document.getElementById('myVideo').addEventListener('ended',myHandler,false);
         function myHandler(e) {
             if(!e) { e = window.event; }
            
             document.getElementById('myVideo').style.display="none";
             document.getElementById('videoEnd').style.display="block";
-           
 
         }
        

@@ -5,6 +5,19 @@ var email1;
 var email2;
 var currentUser;
 
+Date.prototype.yyyymmdd = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+  
+    return [this.getFullYear(),
+            (mm>9 ? '' : '0') + mm,
+            (dd>9 ? '' : '0') + dd
+           ].join('');
+  };
+  
+  var date = new Date();
+
+  
 window.onload = function() {
     $("#myForm").show();
     $("#levels").hide();
@@ -95,6 +108,8 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     $("#levels").hide();
     $("#sign-out").hide();
     $("#plotting_canvas").addClass("hidden");
+
+    writeUserData(email2,date.toString(),coordCounter);
 })
 
       

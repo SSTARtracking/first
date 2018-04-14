@@ -1,16 +1,6 @@
- var coordCounter; 
+ var coordCounter =0; 
 
- Date.prototype.yyyymmdd = function() {
-    var mm = this.getMonth() + 1; // getMonth() is zero-based
-    var dd = this.getDate();
-  
-    return [this.getFullYear(),
-            (mm>9 ? '' : '0') + mm,
-            (dd>9 ? '' : '0') + dd
-           ].join('');
-  };
-  
-  var date = new Date();
+
 
 
 
@@ -30,7 +20,7 @@
                 coordCounter++;
                 console.log(coordCounter);
             }
-            writeUserData(email2,date,coordCounter);
+        
     })
          .begin()
          .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
