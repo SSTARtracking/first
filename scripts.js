@@ -1,4 +1,4 @@
- var coordCounter = 0; 
+ var coordCounter; 
 
  Date.prototype.yyyymmdd = function() {
     var mm = this.getMonth() + 1; // getMonth() is zero-based
@@ -30,14 +30,12 @@
                 coordCounter++;
                 console.log(coordCounter);
             }
+            writeUserData(email2,date,coordCounter);
     })
          .begin()
          .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
-   
-    //    var email1 = email.replace("@", "_");
-    //    var email2 = email1.replace(".", "_");
-    //    writeUserData(email2,date.yyyymmdd(), coordCounter); 
 
+   
      var width = 320;
      var height = 240;
      var topDist = '0px';
@@ -104,6 +102,7 @@
         drawLoop();
    };
 
+
       function checkIfReady() {
          if (webgazer.isReady()) {
             setup();
@@ -114,14 +113,12 @@
       setTimeout(checkIfReady,100);
   };
 
+
   window.onbeforeunload = function() {
       webgazer.end(); //Uncomment if you want to save the data even if you reload the page.
       window.localStorage.clear(); //Comment out if you want to save data across different sessions
   }
 
-  var email1 = email.replace("@", "_");
-       var email2 = email1.replace(".", "_");
-       writeUserData(email2,date.yyyymmdd(), coordCounter); 
 
   /**
    * Restart the calibration process by clearing the local storage and reseting the calibration point

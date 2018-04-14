@@ -157,6 +157,7 @@
         firebase.initializeApp(config);
         // Get a reference to the database service
         var database = firebase.database();
+        
         function writeUserData( email, date, coordCounter) {
   firebase.database().ref('users/' + email).push({
     date: date,
