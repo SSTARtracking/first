@@ -148,7 +148,7 @@ var ref = firebase.database().ref();
     output.innerHTML = JSON.stringify(snapshot.val(), null, 2);
 });
 
-FirebaseDatabase.getInstance().setPeristenceEnable(true);
+//FirebaseDatabase.getInstance().setPeristenceEnable(true);
 scoreDatabase = FirebaseDatabase.getInstance ();
 scoreDatabaseReference = scoreDatabase.getReference ("score");
 addEventListener(scoreDatabaseReference);
