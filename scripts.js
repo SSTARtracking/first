@@ -1,27 +1,31 @@
- var coordCounter = 0; 
+ var coordCounter =0; 
+
+
+
+
+
  window.onload = function() {
     //start the webgazer tracker
     webgazer.setRegression('ridge') /* currently must set regression and tracker */
         .setTracker('clmtrackr')
          .setGazeListener(function(data, clock) {
-        console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
-        console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
+        // console.log(data); /* data is an object containing an x and y key which are the x and y prediction coordinates (no bounds limiting) */
+        // console.log(clock); /* elapsed time in milliseconds since webgazer.begin() was called */
         var prediction = webgazer.getCurrentPrediction();
         if (prediction) {
             var x = prediction.x;
             var y = prediction.y;
             }
-            if((x<350 && x> 250) && (y< 250 && y >150)) {
+            if((x<1100 && x> 460) && (y< 530 && y >300)) {
                 coordCounter++;
                 console.log(coordCounter);
             }
+        
     })
          .begin()
          .showPredictionPoints(true); /* shows a square every 100 milliseconds where current prediction is */
-   
-          
-        
 
+   
      var width = 320;
      var height = 240;
      var topDist = '0px';
@@ -88,6 +92,7 @@
         drawLoop();
    };
 
+
       function checkIfReady() {
          if (webgazer.isReady()) {
             setup();
@@ -97,6 +102,7 @@
           }
       setTimeout(checkIfReady,100);
   };
+
 
   window.onbeforeunload = function() {
       webgazer.end(); //Uncomment if you want to save the data even if you reload the page.

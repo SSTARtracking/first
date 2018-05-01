@@ -1,9 +1,23 @@
 // Initialize Cloud Firestore through Firebase
 var db;
-
+var email;
+var email1;
+var email2;
 var currentUser;
 
+Date.prototype.yyyymmdd = function() {
+    var mm = this.getMonth() + 1; // getMonth() is zero-based
+    var dd = this.getDate();
+  
+    return [this.getFullYear(),
+            (mm>9 ? '' : '0') + mm,
+            (dd>9 ? '' : '0') + dd
+           ].join('');
+  };
+  
+  var date = new Date();
 
+  
 window.onload = function() {
     $("#myForm").show();
     $("#levels").hide();
@@ -24,13 +38,14 @@ firebase.initializeApp(config);
 document.querySelector('#register').addEventListener('click',function (e){
     e.preventDefault();
     e.stopPropagation();
-    var email = document.querySelector('#email').value;
+    email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value
     var credential = firebase.auth.EmailAuthProvider.credential(email, password);
     firebase.auth().createUserWithEmailAndPassword (email, password)
       //if it works
       .then( function(user){
-      
+        email1 = email.replace("@", "_");
+        email2 = email1.replace(".", "_");
         //log to the console that a user was created
         console.log("Successfully created user account: ", user.uid);
         //popup (toast) that the user account was created
@@ -56,10 +71,11 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
   
     e.preventDefault();
     e.stopPropagation();
-    var email = document.querySelector('#email').value;
+    email = document.querySelector('#email').value;
     var password = document.querySelector('#password').value
     var credential = firebase.auth.EmailAuthProvider.credential(email, password);
-    
+    email1 = email.replace("@", "_");
+    email2 = email1.replace(".", "_");
    
     var auth = firebase.auth();
     currentUser = auth.currentUser;
@@ -82,7 +98,7 @@ document.querySelector('#sign-in').addEventListener('click', function(e) {
             Materialize.toast("Sign In Error: " + errorMessage, 4000);
         });
 })
-      
+
 document.querySelector('#sign-out').addEventListener('click', function(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -92,8 +108,10 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     $("#levels").hide();
     $("#sign-out").hide();
     $("#plotting_canvas").addClass("hidden");
+
 })
 
+      
 function showLevelList(){
     synchronizeProgress();
     $("#levels").show();
@@ -146,11 +164,10 @@ addEventListener(scoreDatabaseReference);
 
   // Get a reference to the database service
   var database = firebase.database();
-  function writeUserData(userId, name, email, imageUrl) {
-    firebase.database().ref('users/' + userId).set({
-      username: name,
-      email: email,
-      profile_picture : imageUrl
+  function writeUserData(email, date, coordCounter) {
+    firebase.database().ref('users/' + email).push({
+      date: date,
+      coordCounter: coordCounter
     });
   }
 
