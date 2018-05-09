@@ -9,12 +9,24 @@
       <!--Let browser know website is optimized for mobile-->
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
+    <style>
+        body {
+            opacity: 1;
+            transition: 1s opacity;
+        }
+        body.fade-out {
+            opacity: 0;
+            transition: none;
+        }
+    </style>
 
     <body>
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script type="text/javascript" src="../js/materialize.min.js"></script>
      
+      <script>document.body.className += ' fade-out';</script>
+      <script type="text/javascript" src="/fadeOut.js"></script>
    
     <!-- Sets up the main NavBar with the buttons and stuff -->
     <nav>
@@ -32,71 +44,138 @@
 
     <br>
 
-    <!-- Sets up cards -->
-    <div class="row">
-      <div class="col s1 m3">
+<div class="row"> <div class="col s10 offset-s1">
+<!-- Sets up layout -->
+    <div class="divider"></div>
+    <div class="section">
+      <h5>Our Mission</h5>
+      <p>Families of children with social challenges must have access to many resources in order to in 
+        aid their development. Our research investigates if our interactive, specialized, and affordable technology 
+        can be a beneficial resource. Our project is aimed at children with autism; many children with autism 
+        struggle making eye contact, preventing them from interacting and connecting with others. The beta web 
+        application that we have developed seeks to improve eye movement by encouraging users to make and maintain 
+        eye contact with an engaging video in order to gain points. The layout of the game leads the user from more 
+        basic to more complex and stressful levels, easing the user into more challenging situations as they progress. 
+        This teaches eye contact skills through a fun game and aids as a practice mechanism. While the user is working
+         and playing with the application, our eye-tracking software and algorithm is able to track their progress 
+         and measure the amount of eye contact the child maintains with the visual. Additionally, our visual 
+         encourages the user to answer questions that can help children identify and express their feelings. Our goal 
+         is to make interactions feel more comfortable and less stressful. Our entertaining, interactive application 
+         can hopefully become a beneficial resource to those with social skill deficits. 
+      </p>
+    </div>
+    <div class="divider"></div>
+    <div class="section">
+      <h5>Our Team</h5>
 
-        <!-- Jenna Card -->
-      <div class="card tooltipped" data-position="bottom" data-delay="50" data-tooltip="Coder: System Architecture">
-          <div class="card-image waves-effect waves-block waves-light">
-              <img class="activator" src="../images/Jenna.jpg">
+      <!-- Sets up cards -->
+      <div class="row">
+        <div class="col s1 m3">
+
+          <!-- Jenna Card -->
+        <div class="card tooltipped" data-position="bottom" data-delay="50" data-tooltip="Coder: System Architecture">
+            <div class="card-image waves-effect waves-block waves-light">
+                <img class="activator" src="../images/Jenna.jpg">
+              </div>
+              <div class="card-content">
+                <span class="card-title activator grey-text text-darken-4">Jenna Kronenberg<i class="material-icons right">more_vert</i></span>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title grey-text text-darken-4">Jenna Kronenberg<i class="material-icons right">close</i></span>
+                <p>Here is some more information about this product that is only revealed once clicked on.</p>
             </div>
-            <div class="card-content">
-              <span class="card-title activator grey-text text-darken-4">Jenna Kronenberg<i class="material-icons right">more_vert</i></span>
+          </div>
+        </div>
+        <div class="col s2 m3">
+          <!-- Stephanie -->
+          <div class="card tooltipped" data-position="bottom" data-delay="50" data-tooltip="Coder: Authentification">
+              <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="./images/Stephanie.jpg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Stephanie Cho<i class="material-icons right">more_vert</i></span>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Stephanie Cho<i class="material-icons right">close</i></span>
+                  <p>Here is some more information about this product that is only revealed once clicked on.</p>
+              </div>
+            </div></div>
+            <!-- Coco -->
+      <div class="col s3 m3">
+          <div class="card tooltipped" data-position="bottom" data-delay="50" data-tooltip="Coder: User Interface">
+              <div class="card-image waves-effect waves-block waves-light">
+                  <img class="activator" src="./images/CocoKaleel.jpeg">
+                </div>
+                <div class="card-content">
+                  <span class="card-title activator grey-text text-darken-4">Caroline Kaleel<i class="material-icons right">more_vert</i></span>
+                  <p><a href="http://www.veryhappyrobot.com/" target="_blank">Website</a></p>
+                </div>
+                <div class="card-reveal">
+                  <span class="card-title grey-text text-darken-4">Caroline Kaleel<i class="material-icons right">close</i></span>
+                  <p>Caroline Kaleel is a web developer and professional electrical 
+                      engineer. She is a sophomore at Harvard-Westlake, and spends 
+                      her free time fencing and playing the saxophone.</p>
+              </div>
             </div>
-            <div class="card-reveal">
-              <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-              <p>Here is some more information about this product that is only revealed once clicked on.</p>
+        </div>
+  <!-- Andrew's Card -->
+        <div class="col s4 m3">
+            <div class="card tooltipped" data-position="top" data-delay="50" data-tooltip="Mentor: Pacifist">
+                <div class="card-image waves-effect waves-block waves-light">
+                    <img class="activator" src="./images/Andrew.jpg">
+                  </div>
+                  <div class="card-content">
+                    <span class="card-title activator grey-text text-darken-4">Andrew Theiss<i class="material-icons right">more_vert</i></span>
+                    <p><a href="https://www.andrewtheiss.com/" target="_blank">Website</a></p>
+                  </div>
+                  <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4">Andrew Theiss<i class="material-icons right">close</i></span>
+                    <p> Andrew Theiss is a robotics coach at Harvard-Westlake. You may think his 
+                      middle name is Steven but that's fake news, it's actually "Robotics".
+                       He's a proud mentor of the robotics team at HW and is excited to assist in it's 
+                       future in every possible way.</p>
+                </div>
+              </div>
+        </div>
+      </div>
+
+    </div>
+    <!-- <div class="divider"></div>
+    <div class="section">
+      <h5>Section 3</h5>
+      <p>Stuff</p>
+    </div> -->
+
+
+  </div>
+
+</div>
+    <footer class="page-footer deep-purple lighten-4">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">SSTARtracking</h5>
+            <p class="grey-text text-lighten-4">Social Skills Technology for Autism Research:
+                Eye Tracking Technology for the Development of Social Skills in Children with Autism. 
+                </p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="https://webgazer.cs.brown.edu/" target="_blank">WebGazer</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.veryhappyrobot.com/" target="_blank">Caroline's site</a></li>
+              <li><a class="grey-text text-lighten-3" href="http://www.hw.com/" target = "_blank">Our School</a></li>
+              <li><a class="grey-text text-lighten-3" href="https://www.archer.org/page/list-detail?pk=86536" target"_blank">Archer School RISE Award</a></li>
+            </ul>
           </div>
         </div>
       </div>
-      <div class="col s2 m3">
-        <!-- Stephanie -->
-        <div class="card tooltipped" data-position="bottom" data-delay="50" data-tooltip="Coder: Authentification">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="../images/Stephanie.jpg">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Stephanie Cho<i class="material-icons right">more_vert</i></span>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div></div>
-          <!-- Coco -->
-    <div class="col s3 m3">
-        <div class="card tooltipped" data-position="bottom" data-delay="50" data-tooltip="Coder: User Interface">
-            <div class="card-image waves-effect waves-block waves-light">
-                <img class="activator" src="../images/Coco.jpg">
-              </div>
-              <div class="card-content">
-                <span class="card-title activator grey-text text-darken-4">Caroline Kaleel<i class="material-icons right">more_vert</i></span>
-                <p><a href="http://www.veryhappyrobot.com/" target="_blank">Website</a></p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                <p>Here is some more information about this product that is only revealed once clicked on.</p>
-            </div>
-          </div>
+      <div class="footer-copyright">
+        <div class="container">
+            &copy 2018 Copyright SSTARtracking
+        </div>
       </div>
-<!-- Andrew's Card -->
-      <div class="col s4 m3">
-          <div class="card tooltipped" data-position="top" data-delay="50" data-tooltip="Mentor: Pacifist">
-              <div class="card-image waves-effect waves-block waves-light">
-                  <img class="activator" src="../images/Andrew.jpg">
-                </div>
-                <div class="card-content">
-                  <span class="card-title activator grey-text text-darken-4">Andrew Theiss<i class="material-icons right">more_vert</i></span>
-                  <p><a href="https://www.andrewtheiss.com/" target="_blank">Website</a></p>
-                </div>
-                <div class="card-reveal">
-                  <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
-                  <p>Here is some more information about this product that is only revealed once clicked on.</p>
-              </div>
-            </div>
-      </div>
-    </div>
+    </footer>
   </html>
 
 
