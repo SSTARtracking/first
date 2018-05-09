@@ -108,7 +108,6 @@ document.querySelector('#sign-out').addEventListener('click', function(e) {
     $("#levels").hide();
     $("#sign-out").hide();
     $("#plotting_canvas").addClass("hidden");
-
 })
 
       
