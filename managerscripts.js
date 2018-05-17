@@ -37,7 +37,7 @@ function synchronizeProgress() {
 
 var vid = document.getElementById("myVideo");
 vid.onended = function() {
-    alert("The video has ended");
+    // alert("The video has ended");
     console.log("ended");
     loadReward();
 };
