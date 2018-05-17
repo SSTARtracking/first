@@ -21,7 +21,8 @@
 
       <!-- WebGazer.js library -->
       <script src="webgazer.js" type="text/javascript" ></script>
-     
+      <script src="calibrateScripts.js"></script>
+
 
       <!--Import jQuery before materialize.js-->
       <script type="text/javascript" src="https://code.jquery.com/jquery.min.js"></script>
@@ -74,7 +75,7 @@
       <!-- Makes the level buttons -->
     <div class="row">
       <!-- each div class is in the row and is s1 wide... color blue lighten-4 and linking to the html file with the level name -->
-        <div class="col s2"><a onclick="calibrate" class="load-level waves-effect waves-light btn blue lighten-3">Calibrate</a></div>
+        <div class="col s2"><a onclick="calibrate()" class="load-level waves-effect waves-light btn blue lighten-3">Calibrate</a></div>
         <div class="col s1"><a onclick="loadLevel(1)" class="load-level waves-effect waves-light btn blue lighten-3">1</a></div>
         <div class="col s1"><a onclick="loadLevel(2)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">2</a></div>
         <div class="col s1"><a onclick="loadLevel(3)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">3</a></div>

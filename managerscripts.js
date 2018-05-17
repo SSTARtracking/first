@@ -16,8 +16,13 @@ function showLevelList(){
 
 function loadLevel(i) {
     levelCurrentlyLoaded = i;
-    showLevel();
     $("#levelLoad").load("level"+i+".html");
+    showLevel();
+}
+
+function calibrate () {
+    $("#levelLoad").load("calibrate.html");
+    showLevel();
 }
 
 function showLevel() {
