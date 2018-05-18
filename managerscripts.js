@@ -1,5 +1,8 @@
 window.onload = function() {
     $("#reward").hide();
+    $("#back").hide();
+        $("#sign-out-btn").hide();
+
 }
 
 var progress = 1;
