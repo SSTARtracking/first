@@ -1,7 +1,9 @@
 window.onload = function() {
     $("#reward").hide();
-    $("#back").hide();
-        $("#sign-out-btn").hide();
+    $("#myForm").show();
+    $("#levels").hide();
+    $("#sign-out").hide();
+    $("#plotting_canvas").addClass("hidden");
 
 }
 

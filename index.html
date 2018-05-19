@@ -63,7 +63,7 @@
               <a class="waves-effect waves-teal blue lighten-3 btn" id="register"><i class="material-icons right">person_add</i>Register</a>
 
               <!-- Sign in button -->
-              <a class="waves-effect waves-light teal lighten-3 btn" id="sign-in"><i class="material-icons right">fingerprint</i>Sign In</a>
+              <a class="waves-effect waves-light blue lighten-3 btn" id="sign-in"><i class="material-icons right">fingerprint</i>Sign In</a>
               
             </div>
         </form>
@@ -71,7 +71,7 @@
     </div>
 
     <!-- Makes the section for level buttons -->
-    <div class="section" id = "levels" hidden>
+  <div class="section" id = "levels" hidden>
       <!-- Makes the level buttons -->
     <div class="row">
       <!-- each div class is in the row and is s1 wide... color blue lighten-4 and linking to the html file with the level name -->
@@ -86,26 +86,31 @@
         <div class="col s1"><a onclick="loadLevel(8)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">8</a></div>
         <div class="col s1"><a onclick="loadLevel(9)" class="load-level waves-effect waves-light btn blue lighten-3 disabled">9</a></div>
         </div>
+        
+
+
     </div>
 
     <div class="col s12" id = "levelLoad"></div>
 
+    <div class = "col s3 offset-s6">
 
+    </div>
     <br>
 
-    <div class="row">
+    <div class="buttons row">
       <div class="col s3">
             <!-- Back to Levels button -->
-        <a id="back" onclick="showLevelList()" class="back-btn waves-effect waves-light blue lighten-3 btn" hidden>
-          <i class="material-icons right">keyboard_return  </i>
-          Return to Levels
-        </a>
+            
+            <a onclick="showLevelList()" class="back waves-effect waves-light blue lighten-3 btn">
+              <i class="material-icons right">keyboard_return</i>
+            </a>
      
+        <br>
         <!-- Sign out button -->
 
-        <a class="sign-out-btn waves-effect waves-light blue lighten-3 btn" id="sign-out" hidden>
+        <a class="sign-out-btn waves-effect waves-light blue lighten-3 btn" id="sign-out">
           <i class="material-icons right">exit_to_app</i>
-          Sign Out
         </a>
       </div>
     </div>

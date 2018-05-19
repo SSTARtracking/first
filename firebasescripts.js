@@ -22,7 +22,7 @@ window.onload = function() {
     $("#myForm").show();
     $("#levels").hide();
     $("#sign-out").hide();
-    $("#back").hide();
+    $("#plotting_canvas").addClass("hidden");
 }
 // Initialize Firebase
 var config = {
